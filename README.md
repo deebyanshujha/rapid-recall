@@ -1,33 +1,107 @@
-# Rapid Recall
+# 🧠 Rapid Recall
 
-**Rapid Recall** is a fast-paced, turn-based trivia game where players test their knowledge across various categories like Actors, Countries, Companies, Singers, and TV Shows.
+Rapid Recall is a **multiplayer browser-based recall game** where players take turns naming words from randomly selected categories within a limited time.  
+The game tests **memory, quick thinking, and knowledge** while keeping track of scores and enforcing rules like duplicate prevention.
 
-## Motivation
-The goal of Rapid Recall is to provide a fun, interactive way for friends to challenge each other's general knowledge. It combines the pressure of a timer with the randomness of categories to create an engaging experience that is simple to learn but hard to master. It was designed to be:
-- **Accessible**: Easy for anyone to pick up and play.
-- **Educational**: Helps players recall and learn names of countries, famous people, and brands.
-- **Social**: Built for 2-10 players to play together on a single screen.
+---
 
-## Guidelines (How to Play)
+## 🎮 Game Overview
 
-1.  **Setup**:
-    - Open `index.html` in your web browser.
-    - Enter the number of players (2 to 10).
-    - Click **"Start Game"**.
+In each round:
 
-2.  **Gameplay**:
-    - The game will highlight whose turn it is (e.g., "Player 1's Turn").
-    - A random **Category** (e.g., "Countries") will appear.
-    - You have **15 seconds** to type a valid answer for that category.
-    - Press **Enter** or click **Submit**.
+1. A **random category** is selected.
+2. A player has **15 seconds** to type a valid answer belonging to that category.
+3. If the answer is correct and **not previously used**, the player earns a point.
+4. The turn moves to the **next player**.
+5. The game continues until players decide to end it, and the **winner is determined by the highest score**.
 
-3.  **Rules**:
-    - **Correct Answer**: You get +1 point, and the turn passes to the next player.
-    - **Invalid Answer**: You will see an error message. Try again if time permits!
-    - **Duplicate Answer**: You cannot use a word that has already been used in the current game.
-    - **Pass**: If you are stuck, click "Pass" to skip your turn (no points awarded).
+---
 
-4.  **Winning**:
-    - The game continues indefinitely until you decide to stop.
-    - Click the **"End Game"** button to finish the session.
-    - The player with the highest score wins!
+## 📸 Game Screenshots
+
+### Start Screen
+![Start Screen](start.png)
+
+### Gameplay
+![Gameplay](play.png)
+
+### Winner Screen
+![Winner Screen](end.png)
+
+## ✨ Features
+
+- 👥 **Multiplayer Support** – play with multiple players
+- 🎯 **Random Category Selection** every turn
+- ⏱ **15-second countdown timer** for each player
+- 🔁 **Duplicate answer prevention**
+- 📊 **Live scoreboard updates**
+- 🏆 **Automatic winner detection**
+- ⚡ **Keyboard support** (press Enter to submit answer)
+
+---
+
+## 🛠 Tech Stack
+
+- **JavaScript** – game logic and state management  
+- **HTML** – UI structure  
+- **CSS** – styling and layout  
+
+---
+
+## 📂 Project Structure
+
+```
+rapid-recall
+│
+├── index.html        # Main game interface
+├── style.css         # Game styling
+├── script.js         # Core game logic
+├── categories.js     # Category word database
+└── assets/           # Images or UI assets
+```
+
+---
+
+## 🚀 How to Run the Game
+
+1. Clone the repository
+
+```
+git clone https://github.com/deebyanshujha/rapid-recall.git
+```
+
+2. Open the project folder.
+
+3. Open **index.html** in your browser.
+
+4. Enter the number of players and start playing.
+
+---
+
+## 🎯 Game Rules
+
+- Each player gets **15 seconds** to answer.
+- Answers must belong to the **current category**.
+- **Previously used answers are not allowed**.
+- Correct answers give **+1 point**.
+- The player with the **highest score wins**.
+
+---
+
+## 💡 Future Improvements
+
+- Add **difficulty levels**
+- Add **online multiplayer**
+- Add **leaderboard storage**
+- Add **sound effects and animations**
+- Add **mobile-friendly UI**
+
+---
+
+## 👨‍💻 Author
+
+**Deebyanshu Jha**  
+B.Tech CSE (IoT) – VIT Vellore
+
+GitHub:  
+https://github.com/deebyanshujha
