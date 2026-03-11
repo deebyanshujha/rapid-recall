@@ -1,6 +1,9 @@
 body {
-    background-color: #f4f6f8; /* Very light grey/blue */
-    font-family: 'Poppins', sans-serif;
+    background-color: #74b9ff; /* Bright sky blue */
+    background-image: radial-gradient(#fff 15%, transparent 16%), radial-gradient(#fff 15%, transparent 16%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    font-family: 'Comic Neue', cursive;
     color: #333;
     display: flex;
     justify-content: center;
@@ -9,24 +12,34 @@ body {
     margin: 0;
 }
 
+h1, .winner, .player-badge, h3, #current-category {
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 1px;
+}
+
 .container {
-    background-color: white;
+    background-color: #ffffff;
     width: 90%;
     max-width: 500px;
     padding: 30px;
-    border-radius: 8px; /* Standard rounded corners */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft, standard shadow */
+    border-radius: 20px;
+    border: 5px solid #2d3436;
+    box-shadow: 10px 10px 0px #2d3436;
     text-align: center;
 }
 
 h1 {
     margin-top: 0;
-    color: #2c3e50; /* Dark blue-grey */
+    color: #ff9f43;
+    font-size: 3rem;
+    text-shadow: 2px 2px 0 #2d3436, -1px -1px 0 #2d3436, 1px -1px 0 #2d3436, -1px 1px 0 #2d3436;
 }
 
 .subtitle {
-    color: #7f8c8d;
+    color: #636e72;
     margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .hidden {
@@ -35,116 +48,153 @@ h1 {
 
 /* Inputs */
 input[type="number"], input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 18px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 700;
     margin: 10px 0;
     width: 100%;
     max-width: 300px;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 3px solid #2d3436;
+    border-radius: 12px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
     box-sizing: border-box;
+    outline: none;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #0984e3;
+    background-color: #f1f8ff;
 }
 
 /* Buttons */
 .btn {
-    padding: 10px 20px;
-    font-size: 16px;
+    font-family: 'Luckiest Guy', cursive;
+    padding: 12px 25px;
+    font-size: 20px;
     cursor: pointer;
-    background-color: #3498db; /* Standard Blue */
+    background-color: #00cec9;
     color: white;
-    border: none;
-    border-radius: 4px;
+    border: 4px solid #2d3436;
+    border-radius: 12px;
     margin: 5px;
-    transition: background-color 0.2s;
+    box-shadow: 5px 5px 0px #2d3436;
+    transition: all 0.1s ease;
+    text-shadow: 1px 1px 0px #2d3436;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
-    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 5px 7px 0px #2d3436;
+    filter: brightness(1.1);
+}
+
+.btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px #2d3436;
+}
+
+.btn.primary {
+    background-color: #fdcb6e; /* Yellow */
 }
 
 .btn.secondary {
-    background-color: #95a5a6; /* Grey */
-}
-
-.btn.secondary:hover {
-    background-color: #7f8c8d;
+    background-color: #b2bec3; /* Grey */
 }
 
 .btn.warning {
-    background-color: #e74c3c; /* Red */
-}
-
-.btn.warning:hover {
-    background-color: #c0392b;
+    background-color: #ff7675; /* Red */
 }
 
 /* Game Screen */
 .header {
     margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    border-bottom: 4px dashed #dfe6e9;
+    padding-bottom: 15px;
 }
 
 .player-badge {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #2c3e50;
-    background: #ecf0f1;
-    padding: 5px 15px;
-    border-radius: 15px;
+    font-size: 1.5rem;
+    color: white;
+    background: #6c5ce7;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 3px solid #2d3436;
+    box-shadow: 4px 4px 0px #2d3436;
+    display: inline-block;
 }
 
 #timer-container {
     width: 100%;
-    height: 10px;
-    background-color: #ecf0f1;
-    margin-top: 15px;
-    border-radius: 5px;
+    height: 20px;
+    background-color: #dfe6e9;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 3px solid #2d3436;
+    overflow: hidden;
 }
 
 #timer-bar {
     height: 100%;
-    background-color: #2ecc71; /* Green */
+    background-color: #55efc4;
     width: 100%;
-    border-radius: 5px;
     transition: width 0.1s linear;
 }
 
 .card {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 8px;
+    background-color: #ffeaa7;
+    padding: 30px 20px;
+    border: 4px solid #2d3436;
+    border-radius: 15px;
     margin: 20px 0;
+    box-shadow: 6px 6px 0px #2d3436;
+    position: relative;
+    transform: rotate(-2deg);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: rotate(1deg) scale(1.02);
 }
 
 #current-category {
-    font-size: 24px;
+    font-size: 28px;
     margin: 10px 0 0 0;
-    color: #2c3e50;
+    color: #d63031;
+    text-shadow: 1px 1px 0px #fff;
 }
 
 .label {
-    font-size: 12px;
-    color: #95a5a6;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d3436;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    background: white;
+    padding: 3px 10px;
+    border-radius: 10px;
+    border: 2px solid #2d3436;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Scoreboard */
 .scoreboard {
-    margin-top: 20px;
+    margin-top: 25px;
     padding: 15px;
-    background-color: #fafafa;
-    border: 1px solid #eee;
-    border-radius: 8px;
+    background-color: #81ecec;
+    border: 4px solid #2d3436;
+    border-radius: 15px;
+    box-shadow: 5px 5px 0px #2d3436;
 }
 
 .scoreboard h3 {
     margin: 0 0 10px 0;
-    font-size: 16px;
-    color: #7f8c8d;
+    font-size: 20px;
+    color: #2d3436;
 }
 
 #score-list {
@@ -158,16 +208,22 @@ input[type="number"], input[type="text"] {
 }
 
 #score-list li {
-    font-size: 14px;
-    color: #34495e;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3436;
+    background: white;
+    padding: 5px 12px;
+    border-radius: 10px;
+    border: 2px solid #2d3436;
 }
 
 /* Game Over */
 .winner {
-    font-size: 24px;
-    color: #2ecc71;
+    font-size: 36px;
+    color: #00b894;
     margin: 20px 0;
-    font-weight: bold;
+    text-shadow: 2px 2px 0px #2d3436;
+    animation: bounce 1s infinite;
 }
 
 #final-scores ul {
@@ -180,18 +236,25 @@ input[type="number"], input[type="text"] {
     min-height: 25px;
     margin-top: 15px;
     font-weight: bold;
+    font-family: 'Comic Neue', cursive;
+    font-size: 18px;
 }
 
-.message.success { color: #2ecc71; }
-.message.error { color: #e74c3c; }
+.message.success { color: #00b894; text-shadow: 1px 1px 0px #fff; }
+.message.error { color: #d63031; text-shadow: 1px 1px 0px #fff; }
 
 /* Animation */
 @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(-5px) rotate(-2deg); }
+    50% { transform: translateX(5px) rotate(2deg); }
+    75% { transform: translateX(-5px) rotate(-2deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .shake {
